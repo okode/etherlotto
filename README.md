@@ -68,3 +68,34 @@ Blockchains are deterministic so it's difficult to provide a secure random sourc
 If you need you can verify this smart contract in the public Ethereum blockchain explorer:
 
 https://etherscan.io/address/0x3d212ea8cb9b5795a374956cdb193eee7802c37e
+
+## Testing
+
+(assume you have created first etherbase account with some funding ether)
+
+```
+$ geth --syncmode "light"
+
+$ geth account new
+$ geth account new
+$ geth account new
+
+$ geth attach
+
+> var myfunds = web3.eth.accounts[0]
+> var a1 = web3.eth.accounts[1]
+> var a2 = web3.eth.accounts[2]
+> var a3 = web3.eth.accounts[3]
+
+> personal.unlockAccount(myfunds)
+
+> eth.sendTransaction({from: myfunds, to: a1, value: web3.toWei(.033, 'ether')})
+> eth.sendTransaction({from: myfunds, to: a2, value: web3.toWei(.033, 'ether')})
+> eth.sendTransaction({from: myfunds, to: a3, value: web3.toWei(.033, 'ether')})
+
+> var etherlotto = eth.contract(
+[{"constant":true,"inputs":[],"name":"pot","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"bank","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"play","outputs":[],"payable":true,"type":"function"},{"inputs":[],"payable":false,"type":"constructor"}]).at("0x3d212eA8cB9b5795A374956cdB193EEE7802c37e")
+
+> web3.eth.sendTransaction({from: a1, to: etherlotto.address, value: 10, data: etherlotto.play.getData()})
+
+```
