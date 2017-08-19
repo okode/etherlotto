@@ -3,7 +3,7 @@ Ethereum blockchain based lottery.
 
 ## Playing
 
-If you want to play to this lottery game send 10 weis in the following smart contract:
+If you want to play to this lottery game send 10 weis to the following smart contract:
 
 ![Smart contract QR code](etherlotto-qr.jpg)
 
