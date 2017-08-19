@@ -26,7 +26,7 @@ That computed value is far from beeing perfect but it's enough randomized for te
 
 Blockchains are deterministic so it's difficult to provide a secure random source, but it's possible using some bridge between the Bitcoin blockchain & Ethereum smart contracts so instead using Ethereum block time, an automated lottery game can use higher block exchange rate from Bitcoin's blockchain increasing the entropy quality.
 
-## Verifying contract
+## Verifying contract
 
 If you need you can verify this smart contract in the public Ethereum blockchain explorer:
 
