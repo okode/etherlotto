@@ -69,7 +69,7 @@ If you need you can verify this smart contract in the public Ethereum blockchain
 
 https://etherscan.io/address/0x3d212ea8cb9b5795a374956cdb193eee7802c37e
 
-## Testing
+## Testing
 
 (assume you have created first etherbase account with some funding ether)
 
