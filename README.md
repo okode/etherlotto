@@ -3,7 +3,7 @@ Ethereum blockchain based lottery.
 
 ## Playing
 
-If you want to play to this lottery game send 10 weis to the following smart contract:
+If you want to play to this lottery game invoked `play` method sending 10 weis to the following smart contract:
 
 ![Smart contract QR code](etherlotto-qr.jpg)
 
@@ -12,6 +12,43 @@ If you want to play to this lottery game send 10 weis to the following smart con
 ```
 
 If you are the lucky winner then all the jackpot will be sent to your account.
+
+## Smart contract ABI
+
+```
+[{
+    constant: true,
+    inputs: [],
+    name: "pot",
+    outputs: [{
+        name: "",
+        type: "uint256"
+    }],
+    payable: false,
+    type: "function"
+}, {
+    constant: true,
+    inputs: [],
+    name: "bank",
+    outputs: [{
+        name: "",
+        type: "address"
+    }],
+    payable: false,
+    type: "function"
+}, {
+    constant: false,
+    inputs: [],
+    name: "play",
+    outputs: [],
+    payable: true,
+    type: "function"
+}, {
+    inputs: [],
+    payable: false,
+    type: "constructor"
+}]
+```
 
 ## Rationale
 
