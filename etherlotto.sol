@@ -32,10 +32,10 @@ contract EtherLotto {
         pot += msg.value;
 
         // Compute some *almost random* value for selecting winner from current transaction.
-        var random = uint(block.blockhash(block.number)) + block.timestamp + block.difficulty + block.number;
+        var random = uint(sha3(block.timestamp)) % 2;
 
         // Distribution: 50% of participants will be winners.
-        if (mulmod(random, 1, 2) == 0) {
+        if (random == 0) {
 
             // Send fee to bank account.
             bank.transfer(FEE_AMOUNT);
