@@ -5,10 +5,10 @@ Ethereum blockchain based lottery.
 
 If you want to play to this lottery game invoked `play` method sending 10 weis to the following smart contract:
 
-![Smart contract QR code](etherlotto-qr.jpg)
+![Smart contract QR code](etherlotto-qr.png)
 
 ```
-0x3d212eA8cB9b5795A374956cdB193EEE7802c37e
+0xa11e4ed59dc94e69612f3111942626ed513cb172
 ```
 
 If you are the lucky winner then all the jackpot will be sent to your account.
@@ -67,7 +67,7 @@ Blockchains are deterministic so it's difficult to provide a secure random sourc
 
 If you need you can verify this smart contract in the public Ethereum blockchain explorer:
 
-https://etherscan.io/address/0x3d212ea8cb9b5795a374956cdb193eee7802c37e
+https://etherscan.io/address/0xa11e4ed59dc94e69612f3111942626ed513cb172
 
 ## Testing
 
@@ -94,7 +94,7 @@ $ geth attach
 > eth.sendTransaction({from: myfunds, to: a3, value: web3.toWei(.033, 'ether')})
 
 > var etherlotto = eth.contract(
-[{"constant":true,"inputs":[],"name":"pot","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"bank","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"play","outputs":[],"payable":true,"type":"function"},{"inputs":[],"payable":false,"type":"constructor"}]).at("0x3d212eA8cB9b5795A374956cdB193EEE7802c37e")
+[{"constant":true,"inputs":[],"name":"pot","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"bank","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"play","outputs":[],"payable":true,"type":"function"},{"inputs":[],"payable":false,"type":"constructor"}]).at("0xa11e4ed59dc94e69612f3111942626ed513cb172")
 
 > web3.eth.sendTransaction({from: a1, to: etherlotto.address, value: 10, data: etherlotto.play.getData()})
 
